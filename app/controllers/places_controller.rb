@@ -1,37 +1,37 @@
 class PlacesController < ApplicationController
 
     def index
-        @companies = Company.all
+        @places = Place.all
       end
     
       def show
-        @company = Company.find(params["id"])
+        @place = Place.find(params["id"])
       end
     
       def new
-        @company = Company.new
+        @place = Place.new
       end
     
       def create
-        @company = Company.new(params["company"])
-        @company.save
-        redirect_to "/companies"
+        @place = Place.new(params["place"])
+        @place.save
+        redirect_to "/places"
       end
     
       def edit
-        @company = Company.find(params["id"])
+        @place = Place.find(params["id"])
       end
     
       def update
-        @company = Company.find(params["id"])
-        @company.update(params["company"])
-        redirect_to "/companies"
+        @place = Place.find(params["id"])
+        @place.update(params["place"])
+        redirect_to "/places"
       end
     
       def destroy
-        @company = Company.find(params["id"])
-        @company.destroy
-        redirect_to "/companies"
+        @place = Place.find(params["id"])
+        @place.destroy
+        redirect_to "/places"
       end
 
 end
